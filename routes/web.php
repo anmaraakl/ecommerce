@@ -17,7 +17,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home');
 })->middleware('auth');
-
+///////->group()/////share commn attributes like prefix , middleware ,name spacing,controller
+///////route::prefix('admin')->group(function(){});
+///////middleware-> access control
+///////name space ->
 Route::get('/showadduser', 'UserController@showadduser');
 Route::post('/adduser', 'UserController@adduser');
 Route::get('/myInfo', 'UserController@myInfo');
@@ -25,7 +28,7 @@ Route::get('/showUpdateInfo','UserController@showUpdateInfo');
 Route::post('/upateinformation','UserController@upateinformation');
 Route::get('/showChangePassword','UserController@showChangePassword');
 Route::post('/changePassword','UserController@changePassword');
-Route::get('/users','UserController@AllUsers')->name('users');
+Route::get('/users','UserController@AllUsers')->name('users');//////////for link action with url
 Route::get('/deleteUser/{id}','UserController@deleteUser');
 Route::get('/upgradeUser/{id}','UserController@upgradeUser');
 Route::get('/showUpdateUser/{id}','UserController@showUpdateUser');
